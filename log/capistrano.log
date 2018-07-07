@@ -78,3 +78,82 @@
   INFO [ac6f2c0b] Running /usr/bin/env echo "Branch master (at c8601dc4b1a8e43c216e5cc0f0b505b131fb5a41) deployed as release 20180705134154 by vagrant" >> /var/www/simple/revisions.log as rails@139.59.236.224
  DEBUG [ac6f2c0b] Command: cd /var/www/simple/releases && /usr/bin/env echo "Branch master (at c8601dc4b1a8e43c216e5cc0f0b505b131fb5a41) deployed as release 20180705134154 by vagrant" >> /var/www/simple/revisions.log
   INFO [ac6f2c0b] Finished in 0.238 seconds with exit status 0 (successful).
+  INFO ---------------------------------------------------------------------------
+  INFO START 2018-07-07 06:20:49 +0000 cap staging deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [e9ec116a] Running /usr/bin/env mkdir -p /tmp as rails@139.59.236.224
+ DEBUG [e9ec116a] Command: /usr/bin/env mkdir -p /tmp
+  INFO [e9ec116a] Finished in 0.330 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-simple-staging-vagrant.sh 0.0%
+  INFO Uploading /tmp/git-ssh-simple-staging-vagrant.sh 100.0%
+  INFO [129ce271] Running /usr/bin/env chmod 700 /tmp/git-ssh-simple-staging-vagrant.sh as rails@139.59.236.224
+ DEBUG [129ce271] Command: /usr/bin/env chmod 700 /tmp/git-ssh-simple-staging-vagrant.sh
+  INFO [129ce271] Finished in 0.053 seconds with exit status 0 (successful).
+  INFO [33e6ce85] Running /usr/bin/env git ls-remote https://github.com/auzadventure/simple.git HEAD as rails@139.59.236.224
+ DEBUG [33e6ce85] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-simple-staging-vagrant.sh" ; /usr/bin/env git ls-remote https://github.com/auzadventure/simple.git HEAD )
+ DEBUG [33e6ce85] 	f11b0d626940b3fcf2175909d5dd051a6d01db87	HEAD
+  INFO [33e6ce85] Finished in 0.959 seconds with exit status 0 (successful).
+  INFO [a2528577] Running /usr/bin/env mkdir -p /var/www/simple/shared /var/www/simple/releases as rails@139.59.236.224
+ DEBUG [a2528577] Command: /usr/bin/env mkdir -p /var/www/simple/shared /var/www/simple/releases
+  INFO [a2528577] Finished in 0.047 seconds with exit status 0 (successful).
+ DEBUG [ecf68950] Running [ -f /var/www/simple/current/REVISION ] as rails@139.59.236.224
+ DEBUG [ecf68950] Command: [ -f /var/www/simple/current/REVISION ]
+ DEBUG [ecf68950] Finished in 0.054 seconds with exit status 0 (successful).
+ DEBUG [a91736b1] Running /usr/bin/env cat /var/www/simple/current/REVISION 2>/dev/null as rails@139.59.236.224
+ DEBUG [a91736b1] Command: /usr/bin/env cat /var/www/simple/current/REVISION 2>/dev/null
+ DEBUG [a91736b1] 	f11b0d626940b3fcf2175909d5dd051a6d01db87
+ DEBUG [a91736b1] Finished in 0.041 seconds with exit status 0 (successful).
+ DEBUG [1a4dab8f] Running [ -f /var/www/simple/repo/HEAD ] as rails@139.59.236.224
+ DEBUG [1a4dab8f] Command: [ -f /var/www/simple/repo/HEAD ]
+ DEBUG [1a4dab8f] Finished in 0.049 seconds with exit status 0 (successful).
+  INFO The repository mirror is at /var/www/simple/repo
+ DEBUG [73ca5868] Running if test ! -d /var/www/simple/repo; then echo "Directory does not exist '/var/www/simple/repo'" 1>&2; false; fi as rails@139.59.236.224
+ DEBUG [73ca5868] Command: if test ! -d /var/www/simple/repo; then echo "Directory does not exist '/var/www/simple/repo'" 1>&2; false; fi
+ DEBUG [73ca5868] Finished in 0.048 seconds with exit status 0 (successful).
+  INFO [0cf77130] Running /usr/bin/env git remote set-url origin https://github.com/auzadventure/simple.git as rails@139.59.236.224
+ DEBUG [0cf77130] Command: cd /var/www/simple/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-simple-staging-vagrant.sh" ; /usr/bin/env git remote set-url origin https://github.com/auzadventure/simple.git )
+  INFO [0cf77130] Finished in 0.044 seconds with exit status 0 (successful).
+  INFO [ec2d39f4] Running /usr/bin/env git remote update --prune as rails@139.59.236.224
+ DEBUG [ec2d39f4] Command: cd /var/www/simple/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-simple-staging-vagrant.sh" ; /usr/bin/env git remote update --prune )
+ DEBUG [ec2d39f4] 	Fetching origin
+ DEBUG [ec2d39f4] 	From https://github.com/auzadventure/simple
+ * [new branch]      new        -> new
+  INFO [ec2d39f4] Finished in 1.661 seconds with exit status 0 (successful).
+ DEBUG [6e7aa6a5] Running if test ! -d /var/www/simple/repo; then echo "Directory does not exist '/var/www/simple/repo'" 1>&2; false; fi as rails@139.59.236.224
+ DEBUG [6e7aa6a5] Command: if test ! -d /var/www/simple/repo; then echo "Directory does not exist '/var/www/simple/repo'" 1>&2; false; fi
+ DEBUG [6e7aa6a5] Finished in 0.035 seconds with exit status 0 (successful).
+  INFO [6a4a0dbb] Running /usr/bin/env mkdir -p /var/www/simple/releases/20180707062051 as rails@139.59.236.224
+ DEBUG [6a4a0dbb] Command: cd /var/www/simple/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-simple-staging-vagrant.sh" ; /usr/bin/env mkdir -p /var/www/simple/releases/20180707062051 )
+  INFO [6a4a0dbb] Finished in 0.058 seconds with exit status 0 (successful).
+  INFO [917dade1] Running /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /var/www/simple/releases/20180707062051 as rails@139.59.236.224
+ DEBUG [917dade1] Command: cd /var/www/simple/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-simple-staging-vagrant.sh" ; /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /var/www/simple/releases/20180707062051 )
+  INFO [917dade1] Finished in 0.063 seconds with exit status 0 (successful).
+ DEBUG [08a66b00] Running if test ! -d /var/www/simple/repo; then echo "Directory does not exist '/var/www/simple/repo'" 1>&2; false; fi as rails@139.59.236.224
+ DEBUG [08a66b00] Command: if test ! -d /var/www/simple/repo; then echo "Directory does not exist '/var/www/simple/repo'" 1>&2; false; fi
+ DEBUG [08a66b00] Finished in 0.065 seconds with exit status 0 (successful).
+ DEBUG [ada44260] Running /usr/bin/env git rev-list --max-count=1 master as rails@139.59.236.224
+ DEBUG [ada44260] Command: cd /var/www/simple/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-simple-staging-vagrant.sh" ; /usr/bin/env git rev-list --max-count=1 master )
+ DEBUG [ada44260] 	f11b0d626940b3fcf2175909d5dd051a6d01db87
+ DEBUG [ada44260] Finished in 0.049 seconds with exit status 0 (successful).
+ DEBUG [cc2667ef] Running if test ! -d /var/www/simple/releases/20180707062051; then echo "Directory does not exist '/var/www/simple/releases/20180707062051'" 1>&2; false; fi as rails@139.59.236.224
+ DEBUG [cc2667ef] Command: if test ! -d /var/www/simple/releases/20180707062051; then echo "Directory does not exist '/var/www/simple/releases/20180707062051'" 1>&2; false; fi
+ DEBUG [cc2667ef] Finished in 0.046 seconds with exit status 0 (successful).
+  INFO [a639ccab] Running /usr/bin/env echo "f11b0d626940b3fcf2175909d5dd051a6d01db87" > REVISION as rails@139.59.236.224
+ DEBUG [a639ccab] Command: cd /var/www/simple/releases/20180707062051 && /usr/bin/env echo "f11b0d626940b3fcf2175909d5dd051a6d01db87" > REVISION
+  INFO [a639ccab] Finished in 0.055 seconds with exit status 0 (successful).
+  INFO [c1e38525] Running /usr/bin/env ln -s /var/www/simple/releases/20180707062051 /var/www/simple/releases/current as rails@139.59.236.224
+ DEBUG [c1e38525] Command: /usr/bin/env ln -s /var/www/simple/releases/20180707062051 /var/www/simple/releases/current
+  INFO [c1e38525] Finished in 0.051 seconds with exit status 0 (successful).
+  INFO [398aeb43] Running /usr/bin/env mv /var/www/simple/releases/current /var/www/simple as rails@139.59.236.224
+ DEBUG [398aeb43] Command: /usr/bin/env mv /var/www/simple/releases/current /var/www/simple
+  INFO [398aeb43] Finished in 0.046 seconds with exit status 0 (successful).
+ DEBUG [feaffdf3] Running /usr/bin/env ls -x /var/www/simple/releases as rails@139.59.236.224
+ DEBUG [feaffdf3] Command: /usr/bin/env ls -x /var/www/simple/releases
+ DEBUG [feaffdf3] 	20180705134154	20180705135131	20180707062051
+ DEBUG [feaffdf3] Finished in 0.050 seconds with exit status 0 (successful).
+ DEBUG [69f3ff37] Running if test ! -d /var/www/simple/releases; then echo "Directory does not exist '/var/www/simple/releases'" 1>&2; false; fi as rails@139.59.236.224
+ DEBUG [69f3ff37] Command: if test ! -d /var/www/simple/releases; then echo "Directory does not exist '/var/www/simple/releases'" 1>&2; false; fi
+ DEBUG [69f3ff37] Finished in 0.047 seconds with exit status 0 (successful).
+  INFO [39e45cfe] Running /usr/bin/env echo "Branch master (at f11b0d626940b3fcf2175909d5dd051a6d01db87) deployed as release 20180707062051 by vagrant" >> /var/www/simple/revisions.log as rails@139.59.236.224
+ DEBUG [39e45cfe] Command: cd /var/www/simple/releases && /usr/bin/env echo "Branch master (at f11b0d626940b3fcf2175909d5dd051a6d01db87) deployed as release 20180707062051 by vagrant" >> /var/www/simple/revisions.log
+  INFO [39e45cfe] Finished in 0.051 seconds with exit status 0 (successful).
